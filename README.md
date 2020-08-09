@@ -13,13 +13,13 @@ $ cargo install --version=0.1.0-beta.1 sqlx-cli
 export DATABASE_URL
 
 ```sh
-export DATABASE_URL="mysql://root:password@localhost/practice"
+$ export DATABASE_URL="mysql://root:password@localhost/practice"
 ```
 
 Apply migration
 
 ```sh
-sqlx migrate run
+$ sqlx migrate run
 ```
 
 Run application
