@@ -29,14 +29,13 @@ async fn user_detail() -> HttpResponse {
     HttpResponse::Ok().body(format!("{:?}", deserialized))
 }
 
-async fn user_detail_json() -> HttpResponse {
+async fn user_detail_json() -> impl Responder {
     let user = User {
         id: 12345,
         username: "stefafafan".to_string(),
         name: "すてにゃん".to_string(),
     };
-    let serialized = serde_json::to_string(&user).unwrap();
-    HttpResponse::Ok().body(format!("{}", serialized))
+    HttpResponse::Ok().json(user)
 }
 
 #[actix_rt::main]
